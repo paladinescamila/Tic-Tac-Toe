@@ -1,1 +1,78 @@
 @import 'tailwindcss';
+
+@theme {
+	--color-neutral-950: #000000;
+	--color-neutral-0: #ffffff;
+
+	--color-slate-900: #1a2a33;
+	--color-slate-850: #21313b;
+	--color-slate-800: #1f3641;
+	--color-slate-300: #a8bfc9;
+	--color-slate-100: #dbe8ed;
+
+	--color-amber-400: #f2b137;
+	--color-amber-300: #ffc860;
+
+	--color-teal-400: #31c3bd;
+	--color-teal-300: #65e9e4;
+}
+
+:root {
+	--font-family: 'Outfit', sans-serif;
+}
+
+@utility text-preset-1 {
+	font-family: var(--font-family);
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 125%;
+	letter-spacing: 2.5px;
+}
+
+@utility text-preset-2 {
+	font-family: var(--font-family);
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 125%;
+	letter-spacing: 1.5px;
+}
+
+@utility text-preset-3 {
+	font-family: var(--font-family);
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 125%;
+	letter-spacing: 1.25px;
+}
+
+@utility text-preset-4 {
+	font-family: var(--font-family);
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 125%;
+	letter-spacing: 1px;
+}
+
+@utility text-preset-5-bold {
+	font-family: var(--font-family);
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 130%;
+	letter-spacing: 0.9px;
+}
+
+@utility text-preset-5-medium {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	letter-spacing: 0.9px;
+}
+
+@utility text-preset-6 {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 125%;
+	letter-spacing: 0.75px;
+}
