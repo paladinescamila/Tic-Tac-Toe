@@ -75,7 +75,7 @@ const useGameStore = create<GameStore>((set, get) => ({
 	},
 
 	scheduleCpuTurn: (seconds = 1) => {
-		setTimeout(() => set((state) => ({game: {...state.game, cpuIsPlaying: true}})), 10);
+		setTimeout(() => set((state) => ({game: {...state.game, cpuIsPlaying: true}})), 1);
 
 		setTimeout(
 			() =>
