@@ -9,16 +9,34 @@
 	--color-slate-800: #1f3641;
 	--color-slate-300: #a8bfc9;
 	--color-slate-100: #dbe8ed;
+	--color-dark-slate: #10212a;
 
 	--color-amber-400: #f2b137;
 	--color-amber-300: #ffc860;
+	--color-dark-amber: #cc8b13;
 
 	--color-teal-400: #31c3bd;
 	--color-teal-300: #65e9e4;
+	--color-dark-teal: #118c87;
 }
 
 :root {
 	--font-family: 'Outfit', sans-serif;
+}
+
+body {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+.root {
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-slate-900);
 }
 
 @utility text-preset-1 {
@@ -75,4 +93,16 @@
 	font-size: 12px;
 	line-height: 125%;
 	letter-spacing: 0.75px;
+}
+
+@utility amber-shadow {
+	box-shadow: 0px 8px 0px 0px var(--color-dark-amber);
+}
+
+@utility teal-shadow {
+	box-shadow: 0px 8px 0px 0px var(--color-dark-teal);
+}
+
+@utility slate-shadow {
+	box-shadow: 0px 8px 0px 0px var(--color-dark-slate);
 }
