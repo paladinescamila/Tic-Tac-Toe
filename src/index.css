@@ -106,3 +106,7 @@ body {
 @utility slate-shadow {
 	box-shadow: 0px 8px 0px 0px var(--color-dark-slate);
 }
+
+@utility gray-shadow {
+	box-shadow: 0px 4px 0px 0px #6b8997;
+}
