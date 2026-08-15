@@ -25,8 +25,9 @@ export default function Cell({
 
 	return (
 		<button
-			className={`slate-shadow rounded-2xl flex items-center justify-center cursor-pointer ${mark === 'X' && isWinnerCell ? 'bg-teal-500' : mark === 'O' && isWinnerCell ? 'bg-amber-500' : 'bg-slate-800'}`}
+			className={`slate-shadow rounded-2xl flex items-center justify-center cursor-pointer ${mark === 'X' && isWinnerCell ? 'bg-teal-500' : mark === 'O' && isWinnerCell ? 'bg-amber-500' : 'bg-slate-800'} ${game.cpuIsPlaying ? 'cursor-not-allowed' : ''}`}
 			onClick={onClick}
+			disabled={game.cpuIsPlaying}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
 			{mark === 'X' ? (
@@ -41,7 +42,7 @@ export default function Cell({
 				) : (
 					<OIcon />
 				)
-			) : isHovered && !game.result.mark ? (
+			) : isHovered && !game.result.mark && !game.cpuIsPlaying ? (
 				game.turn === 'X' ? (
 					<XIcon style='outlined' />
 				) : (

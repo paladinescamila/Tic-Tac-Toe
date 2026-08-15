@@ -3,7 +3,7 @@
  * @param board The current state of the game board.
  * @returns The result of the game: 'X' if player X wins, 'O' if player O wins, 'tie' if the game is a tie, or null if the game is still ongoing.
  */
-export const checkBoard = (board: Game['board']): Game['result'] => {
+export const checkBoard = (board: GameBoard): GameResult => {
 	const winningCombinations = [
 		[0, 1, 2],
 		[3, 4, 5],
