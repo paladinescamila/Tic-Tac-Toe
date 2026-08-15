@@ -32,13 +32,13 @@ export default function Cell({
 			onMouseLeave={() => setIsHovered(false)}>
 			{mark === 'X' ? (
 				isWinnerCell ? (
-					<XIcon style='outlined' />
+					<XIcon style='combined' />
 				) : (
 					<XIcon />
 				)
 			) : mark === 'O' ? (
 				isWinnerCell ? (
-					<OIcon style='outlined' />
+					<OIcon style='combined' />
 				) : (
 					<OIcon />
 				)
