@@ -31,21 +31,21 @@ export default function Cell({
 			onMouseLeave={() => setIsHovered(false)}>
 			{mark === 'X' ? (
 				isWinnerCell ? (
-					<XIcon color='teal' style='outlined' />
+					<XIcon style='outlined' />
 				) : (
-					<XIcon color='teal' />
+					<XIcon />
 				)
 			) : mark === 'O' ? (
 				isWinnerCell ? (
-					<OIcon color='amber' style='outlined' />
+					<OIcon style='outlined' />
 				) : (
-					<OIcon color='amber' />
+					<OIcon />
 				)
-			) : isHovered && !game.result ? (
+			) : isHovered && !game.result.mark ? (
 				game.turn === 'X' ? (
-					<XIcon color='teal' style='outlined' />
+					<XIcon style='outlined' />
 				) : (
-					<OIcon color='amber' style='outlined' />
+					<OIcon style='outlined' />
 				)
 			) : null}
 		</button>

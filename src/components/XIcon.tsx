@@ -1,11 +1,11 @@
 import {ICONS_COLORS} from '../constants/colors';
 
 export default function XIcon({
-	color,
+	color = 'teal',
 	size = '64',
 	style = 'filled',
 }: {
-	color: 'amber' | 'teal' | 'dark' | 'light';
+	color?: 'amber' | 'teal' | 'dark' | 'light';
 	size?: string;
 	style?: 'filled' | 'outlined';
 }) {

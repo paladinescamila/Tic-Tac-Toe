@@ -17,14 +17,14 @@ export default function PickMark() {
 			</header>
 			<section className='px-6 py-5 flex flex-col gap-6 items-center justify-center bg-slate-800 rounded-2xl slate-shadow'>
 				<h1 className='text-preset-4 text-slate-300 uppercase text-center'>Pick player 1's mark</h1>
-				<div className='flex flex-row items-center p-2 rounded-[10px] bg-slate-900'>
+				<div className='flex flex-row items-center p-2 rounded-base bg-slate-900'>
 					<button
-						className={`w-49.5 h-13.5 flex items-center justify-center rounded-[10px] cursor-pointer ${mark === 'X' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
+						className={`w-49.5 h-13.5 flex items-center justify-center rounded-base cursor-pointer ${mark === 'X' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
 						onClick={() => setMark('X')}>
 						<XIcon color={mark === 'X' ? 'dark' : 'light'} size='32' />
 					</button>
 					<button
-						className={`w-49.5 h-13.5 flex items-center justify-center rounded-[10px] cursor-pointer ${mark === 'O' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
+						className={`w-49.5 h-13.5 flex items-center justify-center rounded-base cursor-pointer ${mark === 'O' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
 						onClick={() => setMark('O')}>
 						<OIcon color={mark === 'O' ? 'dark' : 'light'} size='32' />
 					</button>

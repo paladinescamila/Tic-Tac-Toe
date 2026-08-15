@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import {getMarks} from '../utils/getMarks';
 
 import Logo from '../assets/logo.svg';
@@ -7,17 +7,31 @@ import OIcon from '../components/OIcon';
 import RestartIcon from '../assets/icon-restart.svg';
 import useGameStore from '../stores/game';
 import Cell from './Cell';
+import Result from './Result';
+import Alert from './Alert';
 
 export default function Board() {
 	const {game, restart, markCell} = useGameStore();
 
 	const {xPlayer, oPlayer} = useMemo(() => getMarks(game), [game]);
 
+	// Restart confirmation
+	const [showRestartConfirmation, setShowRestartConfirmation] = useState<boolean>(false);
+
+	const onCancelRestart = () => {
+		setShowRestartConfirmation(false);
+	};
+
+	const onConfirmRestart = () => {
+		restart();
+		setShowRestartConfirmation(false);
+	};
+
 	return (
 		<main className='flex flex-col gap-5'>
 			<header className='flex flex-row items-center justify-between'>
 				<img src={Logo} alt='logo' />
-				<div className='p-4 flex flex-row items-center justify-center gap-3 w-35 bg-slate-800 rounded-[10px] slate-shadow'>
+				<div className='p-4 flex flex-row items-center justify-center gap-3 w-35 bg-slate-800 rounded-base slate-shadow'>
 					{game.turn === 'X' ? (
 						<XIcon color='light' size='20' />
 					) : (
@@ -26,8 +40,8 @@ export default function Board() {
 					<p className='text-preset-4 text-slate-300 uppercase'>Turn</p>
 				</div>
 				<button
-					className='bg-slate-300 hover:bg-slate-100 cursor-pointer gray-shadow rounded-[10px] w-13 h-13 flex items-center justify-center'
-					onClick={restart}>
+					className='bg-slate-300 hover:bg-slate-100 cursor-pointer gray-shadow rounded-base w-13 h-13 flex items-center justify-center'
+					onClick={() => setShowRestartConfirmation(true)}>
 					<img src={RestartIcon} alt='restart' />
 				</button>
 			</header>
@@ -50,6 +64,16 @@ export default function Board() {
 					<p className='text-preset-2 text-slate-900'>{oPlayer.score}</p>
 				</div>
 			</section>
+			<Result />
+			{showRestartConfirmation && (
+				<Alert
+					title='Restart Game?'
+					cancelText='No, cancel'
+					confirmText='Yes, restart'
+					onCancel={onCancelRestart}
+					onConfirm={onConfirmRestart}
+				/>
+			)}
 		</main>
 	);
 }

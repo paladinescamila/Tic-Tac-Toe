@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 import {switchMark} from '../utils/switchMark';
-import {INITIAL_RESULT, INITIAL_BOARD} from '../constants/initialStates';
+import {INITIAL_RESULT, INITIAL_BOARD, INITIAL_GAME} from '../constants/initialStates';
 import {checkBoard} from '../utils/checkBoard';
 
 interface GameStore {
@@ -9,19 +9,12 @@ interface GameStore {
 	startGameWithPlayer: (player1Mark: Mark) => void;
 	restart: () => void;
 	markCell: (index: number) => void;
+	quit: () => void;
+	nextRound: () => void;
 }
 
 const useGameStore = create<GameStore>((set) => ({
-	game: {
-		mode: 'cpu',
-		state: 'initial',
-		result: INITIAL_RESULT,
-		turn: 'X',
-		player1: {mark: 'X', score: 0},
-		player2: {mark: 'O', score: 0},
-		ties: 0,
-		board: INITIAL_BOARD,
-	},
+	game: INITIAL_GAME,
 
 	startGameWithCPU: (player1Mark) =>
 		set({
@@ -87,6 +80,19 @@ const useGameStore = create<GameStore>((set) => ({
 				};
 			} else return {game: {...game, turn: switchMark(game.turn), board}};
 		}),
+
+	quit: () => set({game: INITIAL_GAME}),
+
+	nextRound: () =>
+		set((state) => ({
+			game: {
+				...state.game,
+				state: 'playing',
+				result: INITIAL_RESULT,
+				turn: 'X',
+				board: INITIAL_BOARD,
+			},
+		})),
 }));
 
 export default useGameStore;
