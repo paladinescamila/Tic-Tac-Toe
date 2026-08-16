@@ -6,7 +6,7 @@ This is a solution to the [Tic Tac Toe game challenge on Frontend Mentor](https:
 
 ## Links
 
-- [Solution]()
+- [Solution](https://www.frontendmentor.io/solutions/tic-tac-toe-game-151TESKp7M)
 - [Live Site](https://tic-tac-toe-paladinescamila.netlify.app)
 
 ## Built with
