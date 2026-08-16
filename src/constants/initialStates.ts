@@ -16,7 +16,7 @@ export const INITIAL_GAME: Game = {
 	cpuIsPlaying: false,
 };
 
-export const getInitialGameOnStart = (player1Mark: Mark, mode: GameMode): Game => ({
+export const getGameOnStart = (player1Mark: Mark, mode: GameMode): Game => ({
 	mode,
 	state: 'playing',
 	result: INITIAL_RESULT,
@@ -35,4 +35,21 @@ export const getGameOnRestart = (game: Game): Game => ({
 	turn: 'X',
 	board: INITIAL_BOARD,
 	cpuIsPlaying: false,
+});
+
+export const getGameOnFinish = (game: Game, board: GameBoard, result: GameResult): Game => ({
+	...game,
+	state: 'finished',
+	result,
+	turn: 'X',
+	player1: {
+		...game.player1,
+		score: result.mark === game.player1.mark ? game.player1.score + 1 : game.player1.score,
+	},
+	player2: {
+		...game.player2,
+		score: result.mark === game.player2.mark ? game.player2.score + 1 : game.player2.score,
+	},
+	ties: result.mark === 'tie' ? game.ties + 1 : game.ties,
+	board,
 });
