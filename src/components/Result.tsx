@@ -29,9 +29,9 @@ export default function Result() {
 			}
 			icon={
 				game.result.mark === 'X' ? (
-					<XIcon size={isMobile ? '30' : '64'} />
+					<XIcon size={isMobile ? '30' : undefined} />
 				) : game.result.mark === 'O' ? (
-					<OIcon size={isMobile ? '30' : '64'} />
+					<OIcon size={isMobile ? '30' : undefined} />
 				) : null
 			}
 			color={game.result.mark === 'X' ? 'teal' : game.result.mark === 'O' ? 'amber' : 'default'}
