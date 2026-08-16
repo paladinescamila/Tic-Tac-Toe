@@ -1,5 +1,6 @@
 import {useMemo, useState} from 'react';
 import useGameStore from '../stores/game';
+import {useResponsive} from '../utils/useResponsive';
 
 import XIcon from './XIcon';
 import OIcon from './OIcon';
@@ -14,6 +15,7 @@ export default function Cell({
 	onClick: () => void;
 }) {
 	const {game} = useGameStore();
+	const {isMobile} = useResponsive();
 
 	const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -32,21 +34,21 @@ export default function Cell({
 			onMouseLeave={() => setIsHovered(false)}>
 			{mark === 'X' ? (
 				isWinnerCell ? (
-					<XIcon style='combined' />
+					<XIcon size={isMobile ? '40' : '64'} style='combined' />
 				) : (
-					<XIcon />
+					<XIcon size={isMobile ? '40' : '64'} />
 				)
 			) : mark === 'O' ? (
 				isWinnerCell ? (
-					<OIcon style='combined' />
+					<OIcon size={isMobile ? '40' : '64'} style='combined' />
 				) : (
-					<OIcon />
+					<OIcon size={isMobile ? '40' : '64'} />
 				)
 			) : isHovered && !game.result.mark && !game.cpuIsPlaying ? (
 				game.turn === 'X' ? (
-					<XIcon style='outlined' />
+					<XIcon size={isMobile ? '40' : '64'} style='outlined' />
 				) : (
-					<OIcon style='outlined' />
+					<OIcon size={isMobile ? '40' : '64'} style='outlined' />
 				)
 			) : null}
 		</button>

@@ -22,12 +22,14 @@ export default function Alert({
 }) {
 	return createPortal(
 		<div className='absolute inset-0 bg-neutral-950/50 flex items-center justify-center'>
-			<div className='flex flex-col items-center justify-center w-full p-12 bg-slate-800'>
-				{subtitle && <p className='text-preset-4 text-slate-300 uppercase'>{subtitle}</p>}
+			<div className='flex flex-col items-center justify-center w-full py-12 px-4 sm:px-12 bg-slate-800'>
+				{subtitle && (
+					<p className='text-preset-5-bold sm:text-preset-4 text-slate-300 uppercase'>{subtitle}</p>
+				)}
 				<div className='pt-4 pb-6 flex flex-row items-center justify-center gap-6'>
 					{icon}
 					<p
-						className={`text-preset-1 uppercase ${color === 'teal' ? 'text-teal-400' : color === 'amber' ? 'text-amber-400' : 'text-slate-300'}`}>
+						className={`text-preset-2 sm:text-preset-1 uppercase ${color === 'teal' ? 'text-teal-400' : color === 'amber' ? 'text-amber-400' : 'text-slate-300'}`}>
 						{title}
 					</p>
 				</div>

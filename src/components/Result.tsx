@@ -1,4 +1,5 @@
 import useGameStore from '../stores/game';
+import {useResponsive} from '../utils/useResponsive';
 
 import Alert from './Alert';
 import OIcon from './OIcon';
@@ -6,6 +7,7 @@ import XIcon from './XIcon';
 
 export default function Result() {
 	const {game, quit, nextRound} = useGameStore();
+	const {isMobile} = useResponsive();
 
 	if (!game.result.mark) return null;
 
@@ -25,7 +27,13 @@ export default function Result() {
 							? 'Player 2 wins!'
 							: ''
 			}
-			icon={game.result.mark === 'X' ? <XIcon /> : game.result.mark === 'O' ? <OIcon /> : null}
+			icon={
+				game.result.mark === 'X' ? (
+					<XIcon size={isMobile ? '30' : '64'} />
+				) : game.result.mark === 'O' ? (
+					<OIcon size={isMobile ? '30' : '64'} />
+				) : null
+			}
 			color={game.result.mark === 'X' ? 'teal' : game.result.mark === 'O' ? 'amber' : 'default'}
 			cancelText='Quit'
 			confirmText='Next round'
