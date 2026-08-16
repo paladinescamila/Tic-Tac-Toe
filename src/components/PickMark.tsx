@@ -21,7 +21,7 @@ export default function PickMark() {
 					<button
 						className={`w-full py-3 flex items-center justify-center rounded-base cursor-pointer ${mark === 'X' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
 						onClick={() => setMark('X')}
-						aria-pressed={mark === 'X' ? 'true' : 'false'}>
+						aria-pressed={mark === 'X'}>
 						<XIcon color={mark === 'X' ? 'dark' : 'light'} size='32' />
 					</button>
 					<button
