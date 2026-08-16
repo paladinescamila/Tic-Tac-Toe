@@ -21,7 +21,7 @@ export default function Alert({
 	onConfirm?: () => void;
 }) {
 	return createPortal(
-		<div className='absolute inset-0 bg-neutral-950/50 flex items-center justify-center'>
+		<section className='absolute inset-0 bg-neutral-950/50 flex items-center justify-center'>
 			<div className='flex flex-col items-center justify-center w-full py-12 px-4 sm:px-12 bg-slate-800'>
 				{subtitle && (
 					<p className='text-preset-5-bold sm:text-preset-4 text-slate-300 uppercase'>{subtitle}</p>
@@ -46,7 +46,7 @@ export default function Alert({
 					</button>
 				</div>
 			</div>
-		</div>,
+		</section>,
 		document.body,
 	);
 }

@@ -13,14 +13,15 @@ export default function PickMark() {
 	return (
 		<main className='w-full sm:w-115 flex flex-col gap-10 items-center'>
 			<header>
-				<img src={Logo} alt='logo' />
+				<img src={Logo} alt='Tic Tac Toe' />
 			</header>
 			<section className='w-full px-6 py-5 flex flex-col gap-6 items-center justify-center bg-slate-800 rounded-2xl slate-shadow'>
 				<h1 className='text-preset-4 text-slate-300 uppercase text-center'>Pick player 1's mark</h1>
 				<div className='flex flex-row items-center p-2 rounded-base bg-slate-900 w-full'>
 					<button
 						className={`w-full py-3 flex items-center justify-center rounded-base cursor-pointer ${mark === 'X' ? 'bg-slate-300' : 'bg-transparent hover:bg-slate-850'}`}
-						onClick={() => setMark('X')}>
+						onClick={() => setMark('X')}
+						aria-pressed={mark === 'X' ? 'true' : 'false'}>
 						<XIcon color={mark === 'X' ? 'dark' : 'light'} size='32' />
 					</button>
 					<button

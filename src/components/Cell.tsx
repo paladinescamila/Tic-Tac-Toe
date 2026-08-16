@@ -28,6 +28,7 @@ export default function Cell({
 	return (
 		<button
 			className={`slate-shadow rounded-2xl flex items-center justify-center cursor-pointer ${mark === 'X' && isWinnerCell ? 'bg-teal-500' : mark === 'O' && isWinnerCell ? 'bg-amber-500' : 'bg-slate-800'} ${game.cpuIsPlaying ? 'cursor-not-allowed' : ''}`}
+			aria-label={`Cell ${index + 1} ${mark ? `marked with ${mark}` : 'empty'}`}
 			onClick={onClick}
 			disabled={game.cpuIsPlaying}
 			onMouseEnter={() => setIsHovered(true)}
