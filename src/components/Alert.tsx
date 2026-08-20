@@ -43,7 +43,7 @@ export default function Alert({
 						{cancelText}
 					</button>
 					<button
-						className='text-preset-4 text-slate-900 bg-amber-400 hover:bg-amber-300 amber-shadow uppercase rounded-base p-4 cursor-pointer'
+						className='text-preset-4 text-slate-900 bg-amber-400 hover:bg-amber-300 small-amber-shadow uppercase rounded-base p-4 cursor-pointer'
 						onClick={onConfirm}>
 						{confirmText}
 					</button>

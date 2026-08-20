@@ -100,12 +100,20 @@ body {
 	box-shadow: 0px 8px 0px 0px var(--color-dark-amber);
 }
 
+@utility small-amber-shadow {
+	box-shadow: 0px 4px 0px 0px var(--color-dark-amber);
+}
+
 @utility teal-shadow {
 	box-shadow: 0px 8px 0px 0px var(--color-dark-teal);
 }
 
 @utility slate-shadow {
 	box-shadow: 0px 8px 0px 0px var(--color-dark-slate);
+}
+
+@utility small-slate-shadow {
+	box-shadow: 0px 4px 0px 0px var(--color-dark-slate);
 }
 
 @utility gray-shadow {

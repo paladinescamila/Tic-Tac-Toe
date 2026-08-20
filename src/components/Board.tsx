@@ -33,7 +33,7 @@ export default function Board() {
 			<header className='flex flex-row items-center justify-between'>
 				<img src={Logo} alt='Tic Tac Toe' />
 				<div
-					className='p-4 flex flex-row items-center justify-center gap-3 w-35 bg-slate-800 rounded-base slate-shadow'
+					className='p-4 flex flex-row items-center justify-center gap-3 w-35 bg-slate-800 rounded-base small-slate-shadow'
 					aria-label={`Current turn: ${game.turn === 'X' ? 'Player 1' : 'Player 2'}`}>
 					{game.turn === 'X' ? (
 						<XIcon color='light' size={isMobile ? '16' : '20'} />
